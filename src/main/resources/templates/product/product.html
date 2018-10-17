@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Product</h1>
+<p th:text="${product.id}"></p>
+<p th:text="${product.name}"></p>
+<p th:text="${product.category}"></p>
+<p th:text="${product.price}"></p>
+<p th:text="${product.xpValue}"></p>
+<input type="button" value="Return to product list" onclick="location.href='/product/'"/>
+<h3>Edit product</h3>
+<form action="#" th:action="@{/products/}" th:object="${product}" method="post">
+    <label>New name:</label>
+    <input type="text" th:field="*{name}">
+    <br />
+    <label>New category:</label>
+    <input type="text" th:field="*{category}">
+    <br />
+    <label>New price:</label>
+    <input type="text" th:field="*{price}">
+    <br />
+    <label>New XP Value:</label>
+    <input type="text" th:field="*{xpValue}">
+    <br />
+    <input type="submit" value="Edit" />
+</form>
+<h3>Delete user</h3>
+<form action="#" th:action="@{'/products/' + ${product.id}}" method="post" th:object="${product}">
+    <input type="submit" value="Delete" onclick="location.href='/products/'"/>
+</form>
+</body>
+</html>

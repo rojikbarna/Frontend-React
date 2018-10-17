@@ -1,0 +1,17 @@
+/.settings/
+/bin/
+/.idea/
+src/.idea/
+/out/
+/.gradle/
+/gradle/
+/build/
+
+gradlew
+gradlew.bat
+
+**/node_modules
+*.txt
+*.iml
+*.png
+

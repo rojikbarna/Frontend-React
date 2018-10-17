@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1>Add a new user</h1>
+<form action="#" th:action="@{/registration}" th:object="${user}" method="post"> <!-- th:action: ABSOLUTE ROUTE -->
+    <label>First name: </label>
+    <br />
+    <input type="text" th:field="*{firstName}">
+    <br />
+    <label>last name: </label>
+    <br />
+    <input type="text" th:field="*{lastName}">
+    <br />
+    <label>nick name: </label>
+    <br />
+    <input type="text" th:field="*{nickName}">
+    <br />
+    <label>password: </label>
+    <br />
+    <input type="text" th:field="*{password}">
+    <br />
+    <label>email: </label>
+    <br />
+    <input type="text" th:field="*{email}">
+
+    <br />
+    <label>date of birth: </label>
+    <br />
+    <input type="text" th:field="*{dob}">
+
+    <br />
+    <label>gender: </label>
+    <br />
+    <input type="text" th:field="*{gender}">
+
+
+    <input type="submit" value="Submit" />
+    <input type="button" value="create user" onclick="location.href='/users/'"/>
+</form>
+</body>
+</html>
